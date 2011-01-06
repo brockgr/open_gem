@@ -13,7 +13,7 @@ module OpenGem
         options[:latest] = true
       end
     end
-    
+
     def get_spec(name)
       dep = Gem::Dependency.new(name, options[:version])
       specs = Gem::Specification.find_all_by_name(name,options[:version])
@@ -22,8 +22,14 @@ module OpenGem
       end
 
       if specs.length == 0
-        say "#{name.inspect} is not available"
-        return nil
+        # If we have not tried to do a pattern match yet, fall back on it.
+        if(!options[:exact] && !name.is_a?(Regexp))
+          pattern = /#{(Regexp.escape name).gsub(/\\-|_/, '(\\-|_|)')}/
+          get_spec(pattern)
+        else
+          say "#{name.inspect} is not available"
+          return nil
+        end
 
       elsif specs.length == 1 || options[:latest]
         return specs.last
