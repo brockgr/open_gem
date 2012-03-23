@@ -1,5 +1,9 @@
 OpenGem
 ========
+1.5.0
+---
+* Pulled in various outstanding pull requests
+
 1.4.2
 ---
 * Respect the VISUAL environment variable above EDITOR. (cwninja)

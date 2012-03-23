@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{open_gem}
-  s.version = "1.4.2"
+  s.version = "1.5.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Adam Sanderson"]
-  s.date = %q{2010-04-23}
+  s.authors = ["Adam Sanderson and Gavin Brock"]
+  s.date = %q{2012-03-23}
   s.description = %q{      Open a gem's source directory with either the default editor, or a specified command.
 }
   s.email = %q{netghost@gmail.com}
@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
     "CHANGELOG.markdown",
      "README.markdown",
      "Rakefile",
-     "VERSION.yml",
      "lib/open_gem/common_options.rb",
      "lib/rubygems/commands/open_command.rb",
      "lib/rubygems/commands/read_command.rb",
